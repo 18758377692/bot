@@ -1,26 +1,25 @@
 # coding=gbk
 """
-×÷Õß£º´¨´¨
-Ê±¼ä£º2021/8/22
-Ë½ÈË½»Á÷Èº£º970353786
+ä½œè€…ï¼šå·å·
+æ—¶é—´ï¼š2021/8/22
+ç§äººäº¤æµç¾¤ï¼š970353786
 """
 # pip install baidu-aip
 from aip import AipSpeech
 
-""" ÄãµÄ APPID AK SK """
-APP_ID = '24734236'
-API_KEY = 'KnmsgdYdL4v9enp2iuD5e6OS'
-SECRET_KEY = 'HGhMchOle5sbzRdFqOoHkRu5P1jZR1NM'
-
+""" ä½ çš„ APPID AK SK """
+APP_ID = 'ä½ çš„id'
+API_KEY = 'ä½ çš„key'
+SECRET_KEY = 'ä½ çš„key'
 client = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
 
-result = client.synthesis('¿ÕÉ½ĞÂÓêºó£¬ÌìÆøÍíÀ´Çï', 'zh', 1, {
-    'vol': 5,  # ÒôÁ¿
-    'spd': 3,  # ÓïËÙ
-    'pit': 9,  # Óïµ÷
-    'per': 3,  # 0£ºÅ® 1£ºÄĞ 3£ºåĞÒ£ 4£ºĞ¡ÂÜÀò
+result = client.synthesis('ç©ºå±±æ–°é›¨åï¼Œå¤©æ°”æ™šæ¥ç§‹', 'zh', 1, {
+    'vol': 5,  # éŸ³é‡
+    'spd': 3,  # è¯­é€Ÿ
+    'pit': 9,  # è¯­è°ƒ
+    'per': 3,  # 0ï¼šå¥³ 1ï¼šç”· 3ï¼šé€é¥ 4ï¼šå°èè‰
 })
-# Ê¶±ğÕıÈ··µ»ØÓïÒô¶ş½øÖÆ ´íÎóÔò·µ»Ødict ²ÎÕÕÏÂÃæ´íÎóÂë
+# è¯†åˆ«æ­£ç¡®è¿”å›è¯­éŸ³äºŒè¿›åˆ¶ é”™è¯¯åˆ™è¿”å›dict å‚ç…§ä¸‹é¢é”™è¯¯ç 
 if not isinstance(result, dict):
     with open('auido.mp3', 'wb') as f:
         f.write(result)
